@@ -12,6 +12,8 @@
 <fieldset>
 	<legend class="sectionheader">Credits</legend>
 
+	<p><span class="contributer">Dome C. (<a href="http://thaifi.com">thaifi.com</a>):</span> Project founder, lead developer of ThaiFi Network </p>
+
 	<p><span class="contributer">Eric Bishop (<a href="http://gargoyle-router.com">gargoyle-router.com</a>):</span> Project founder, lead developer of Gargoyle </p>
 
 	<p><span class="contributer">Paul Bixel:</span> Implemented Active Congestion Control, as well as many other improvements to QoS</p>

@@ -3,7 +3,7 @@
 START=65
 EXTRA_COMMANDS="status"
 EXTRA_HELP="        status Print the status of the service"
-lua /usr/bin/thaifi_config > /etc/wifidog.conf
+/bin/sh /usr/bin/thaifi_config > /etc/wifidog.conf
 
 start() {
 	/usr/bin/wifidog-init start

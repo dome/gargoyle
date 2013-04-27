@@ -79,6 +79,8 @@
 	fi
 
 	lan_ip=$(/sbin/uci get network.lan.ipaddr 2>/dev/null)
+	gw_id=$(/sbin/uci get wireless.radio0.macaddr 2>/dev/null)
+	echo "var gwid=\"$gw_id\";"
 	if [ -n "$lan_ip" ] ; then
 		echo "var wanDns=\""$(sed -e '/nameserver/!d; s#nameserver ##g' /tmp/resolv.conf.auto | sort | uniq | grep -v "$lan_ip" )"\";"
 	else
@@ -98,6 +100,9 @@
 	<legend class="sectionheader">Status</legend>
 
 	<div id="device_container">
+		<div>
+		    <div class="code"> <span class='leftcolumn'>Thaifi Gateway ID:</span><span id="gateway_id" class='rightcolumn'></span></div>
+		</div>
 		<div>
 			<span class='leftcolumn'>Device Name:</span><span id="device_name" class='rightcolumn'></span>
 		</div>

@@ -1389,7 +1389,7 @@ function resetData()
 	{
 		setSelectedValue("bridge_mode", "client_bridge");
 		setSelectedValue("bridge_repeater", "enabled");
-		document.getElementById("bridge_ssid").value = "Gargoyle";
+		document.getElementById("bridge_ssid").value = "@ThaiFi";
 		setSelectedValue("bridge_channel", wirelessDriver=="atheros"  ? "auto" : "5");
 		setSelectedValue("bridge_encryption", "none");
 	}
@@ -1642,7 +1642,7 @@ function resetData()
 	}
 	var wirelessSections=[wifiDevG, wifiDevG, wifiDevA, wifiDevA, apgcfg, apacfg, apcfg, apcfg, apcfg, apcfg, apcfg, othercfg, othercfg, othercfg, othercfg];
 	var wirelessOptions=['channel', 'channel', 'channel', 'channel', 'ssid', 'ssid', 'encryption', 'key', 'key', 'server', 'port', 'ssid', 'encryption', 'key','key'];
-	var wirelessParams=[wirelessDriver=="atheros" ? 'auto' : "5", wirelessDriver=="atheros" ? 'auto' : "5", "36","36", 'Gargoyle', 'Gargoyle_5GHz', 'none', '', '', '', '', 'ExistingWireless', 'none', '',''];
+	var wirelessParams=[wirelessDriver=="atheros" ? 'auto' : "5", wirelessDriver=="atheros" ? 'auto' : "5", "36","36", '@ThaiFi', '@ThaiFi_5GHz', 'none', '', '', '', '', 'ExistingWireless', 'none', '',''];
 	var wirelessFunctions=[lsv,lsv,lsv,lsv,lv,lv,lsv,lv,lv,lv,lv,lv,lsv,lv,lv];
 	loadVariables(uciOriginal, wirelessIds, wirelessPkgs, wirelessSections, wirelessOptions, wirelessParams, wirelessFunctions);	
 	
@@ -1985,7 +1985,7 @@ function scanWifi(ssidField)
 				var testIndex;
 				var oldVal = document.getElementById(ssidField).value;
 				for(testIndex=0; testIndex < scannedSsids[0].length && matchIndex < 0; testIndex++){ matchIndex = scannedSsids[0][testIndex] == oldVal ? testIndex : matchIndex; }
-				if(matchIndex < 0) { matchIndex = oldVal == "Gargoyle" || oldVal == "OpenWrt" || oldVal == "" ? "0" : "custom"; }
+				if(matchIndex < 0) { matchIndex = oldVal == "@ThaiFi" || oldVal == "OpenWrt" || oldVal == "" ? "0" : "custom"; }
 				setSelectedValue("wifi_list_ssid2",  matchIndex + "");
 				setSelectedValue("bridge_list_ssid", matchIndex + "");
 			}

@@ -1,24 +1,13 @@
-#!/usr/bin/lua
-local nxo = require "nixio"
-local n, i,macaddr
-for n, i in ipairs(nxo.getifaddrs()) do
-	local name = i.name:match("[^:]+")
-	local prnt = name:match("^([^%.]+)%.")
+#!/bin/sh
+gwid=$(uci get wireless.radio0.macaddr)
+echo GatewayID $gwid
+cat  <<_EOF_
 
-	if (i.family == "packet") and ( name == "wlan0") then
-	    macaddr = i.addr
-	    --print(name..macaddr);
-	end
-end
-
-print("GatewayID "..macaddr)
-
-foot = [[ 
-# ExternalInterface eth0
+ExternalInterface eth1
 GatewayInterface br-lan
 # GatewayAddress 192.168.1.1
 AuthServer {
-    Hostname a.thaifi.com
+    Hostname b.thaifi.com
     SSLAvailable yes
     Path /
 }
@@ -28,15 +17,15 @@ ClientTimeout 5
 FirewallRuleSet global {
     ## To block SMTP out, as it's a tech support nightmare, and a legal liability
     #FirewallRule block tcp port 25
-    
-    ## Use the following if you don't want clients to be able to access machines on 
+
+    ## Use the following if you don't want clients to be able to access machines on
     ## the private LAN that gives internet access to wifidog.  Note that this is not
     ## client isolation;  The laptops will still be able to talk to one another, as
     ## well as to any machine bridged to the wifi of the router.
     # FirewallRule block to 192.168.0.0/16
     # FirewallRule block to 172.16.0.0/12
     # FirewallRule block to 10.0.0.0/8
-    
+
     ## This is an example ruleset for the Teliphone service.
     #FirewallRule allow udp to 69.90.89.192/27
     #FirewallRule allow udp to 69.90.85.0/27
@@ -64,5 +53,5 @@ FirewallRuleSet unknown-users {
 FirewallRuleSet locked-users {
     FirewallRule block to 0.0.0.0/0
 }
-]]
-print(foot);
+_EOF_
+

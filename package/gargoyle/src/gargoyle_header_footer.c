@@ -69,7 +69,7 @@ int main(int argc, char **argv)
 	char* selected_section = "";
 	char* css_includes = "";
 	char* js_includes = "";
-	char* title = "Gargoyle Router Management Utility";
+	char* title = "ThaiFi Router Management Utility";
 	char** package_variables_to_load = NULL;
 	int c;
 	
@@ -317,13 +317,13 @@ int main(int argc, char **argv)
 			printf("\t</div>\n");
 
 
-			printf("\t<div id=\"outer_logo\">\n");
-			printf("\t\t<div id=\"inner_logo\">\n");
-			printf("\t\t\t<div id=\"garg_title\">Gargoyle</div>\n");
-			printf("\t\t\t<div id=\"garg_desc\">Router<br />Management<br />Utility</div>\n");
-			printf("\t\t\t<div id=\"garg_host\">Device Name: %s</div>\n", hostname);
-			printf("\t\t</div>\n");
-			printf("\t</div>\n");
+	//		printf("\t<div id=\"outer_logo_x\">\n");
+	//		printf("\t\t<div id=\"inner_logo_x\">\n");
+	//		printf("\t\t\t<div id=\"garg_title\">ThaiFi</div>\n");
+	//		printf("\t\t\t<div id=\"garg_desc\">Router<br />Management<br />Utility</div>\n");
+	//		printf("\t\t\t<div id=\"garg_host\">Device Name: %s</div>\n", hostname);
+	//		printf("\t\t</div>\n");
+	//		printf("\t</div>\n");
 
 			printf("\t<div id=\"outer_header\"></div>\n");
 			printf("\t<div id=\"outer_container\">\n");
