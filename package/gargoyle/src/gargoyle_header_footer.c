@@ -325,8 +325,8 @@ int main(int argc, char **argv)
 	//		printf("\t\t</div>\n");
 	//		printf("\t</div>\n");
 
-			printf("\t<div id=\"outer_header\"></div>\n");
-			printf("\t<div id=\"outer_container\">\n");
+	//		printf("\t<div id=\"outer_header\"></div>\n");
+	//		printf("\t<div id=\"outer_container\">\n");
 			printf("\t\t<div id=\"main_external_container\">\n");
 			printf("\t\t\t<div id=\"main_top\"></div>\n");
 			printf("\t\t\t<div id=\"main_internal_container\">\n");
@@ -564,8 +564,8 @@ int main(int argc, char **argv)
 		printf("\t\t\t</div>\n");
 		printf("\t\t\t<div id=\"nav_bottom\"></div>\n");
 		printf("\t\t</div>\n");
-		printf("\t</div>\n");
-		printf("\t<div id=\"outer_footer\"></div>\n");
+	//	printf("\t</div>\n");
+	//	printf("\t<div id=\"outer_footer\"></div>\n");
 		printf("</body>\n");
 		printf("</html>\n");	
 	}	

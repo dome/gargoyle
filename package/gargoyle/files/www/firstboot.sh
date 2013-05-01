@@ -60,7 +60,7 @@ for(tzIndex = 0; tzIndex < timezoneList.length; tzIndex++)
 
 var systemSections = uciOriginal.getAllSectionsOfType("system", "system");
 var currentTimezone = uciOriginal.get("system", systemSections[0], "timezone");
-currentTimezone = currentTimezone == "UTC" ? "UTC0" : currentTimezone;
+currentTimezone = currentTimezone == "UTC" ? "UTC-7" : currentTimezone;
 setSelectedValue("timezone", currentTimezone); //set value from config
 
 document.getElementById('password1').focus();

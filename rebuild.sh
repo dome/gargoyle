@@ -107,16 +107,8 @@ create_gargoyle_banner()
 	local bottom_line=$(printf "| %-26s| %-35s|" "Built $date" "Target  $target/$profile")
 
 	cat << 'EOF' >"$banner_file_path"
-------------------------------------------------------------------
-|            _____                             _                 |
-|           |  __ \                           | |                |
-|           | |  \/ __ _ _ __ __ _  ___  _   _| | ___            |
-|           | | __ / _` | '__/ _` |/ _ \| | | | |/ _ \           |
-|           | |_\ \ (_| | | | (_| | (_) | |_| | |  __/           |
-|            \____/\__,_|_|  \__, |\___/ \__, |_|\___|           |
-|                             __/ |       __/ |                  |
-|                            |___/       |___/                   |
-|                                                                |
+|----------------------------------------------------------------|
+|                        T H A I F I                             |
 |----------------------------------------------------------------|
 EOF
 	echo "$top_line"    >> "$banner_file_path"
@@ -432,7 +424,7 @@ for target in $targets ; do
 				candidates=$(ls "bin/$arch/"*"$pi"* 2>/dev/null | sed 's/^.*\///g')
 				for c in $candidates ; do
 					if [ ! -d "bin/$arch/$c" ] ; then
-						newname=$(echo "$c" | sed "s/openwrt/gargoyle_$lower_short_gargoyle_version/g")
+						newname=$(echo "$c" | sed "s/openwrt/thaifi_$lower_short_gargoyle_version/g")
 						cp "bin/$arch/$c" "$top_dir/images/$target/$newname"
 					fi
 				done
